@@ -1,6 +1,6 @@
 using System;
 using Passenger.Core.Domain;
-using Passenger.Core.Repositories;
+using Passenger.Infrastructure.Repositories;
 using Passenger.Infrastructure.DTO;
 
 namespace Passenger.Infrastructure.Services

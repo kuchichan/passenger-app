@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Passenger.Core.Domain;
 
-namespace Passenger.Core.Repositories
+namespace Passenger.Infrastructure.Repositories
 {
     public interface IUserRepository
     {

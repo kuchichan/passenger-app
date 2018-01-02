@@ -8,7 +8,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Passenger.Core.Repositories;
 using Passenger.Infrastructure.Repositories;
 using Passenger.Infrastructure.Services;
 

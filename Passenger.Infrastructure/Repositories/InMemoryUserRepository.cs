@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Passenger.Core.Domain;
-using Passenger.Core.Repositories;
 
 namespace Passenger.Infrastructure.Repositories
 {
@@ -20,7 +19,7 @@ namespace Passenger.Infrastructure.Repositories
 
         public void Add(User user)
         {
-            throw new NotImplementedException();
+            _users.Add(user);
         }
 
         public User Get(Guid id)
