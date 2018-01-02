@@ -31,7 +31,8 @@ namespace Passenger.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IUserRepository,InMemoryUserRepository>();
-            services.AddScoped<IUserService, UserService>();            
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IDriverService, DriverService>();            
             services.AddMvc();
         }
 
