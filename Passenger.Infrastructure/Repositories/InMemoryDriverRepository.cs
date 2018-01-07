@@ -7,7 +7,10 @@ namespace Passenger.Infrastructure.Repositories
 {
     public class InMemoryDriverRepository : IDriverRepository
     {
-        private static ISet<Driver> _drivers = new HashSet<Driver>();
+        private static ISet<Driver> _drivers = new HashSet<Driver>()
+        {
+
+        };
         public void Add(Driver driver)
         {
             _drivers.Add(driver);

@@ -20,9 +20,5 @@ namespace Passenger.Core.Domain
             UserId = userId;
         }
     
-        public void SetVehicle(string brand,string name, int seats)
-        {
-            Vehicle = new Vehicle(brand,name,seats);
-        }
     }    
 }

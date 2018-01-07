@@ -10,7 +10,10 @@ namespace Passenger.Core.Domain
 
         public string Brand { get; protected set; }
 
-        public Vehicle(string brand, string name, int seats)
+        protected Vehicle()
+        {
+        }
+        private Vehicle(string brand, string name, int seats)
         {
             Name = name;
             Seats = seats;
@@ -23,7 +26,7 @@ namespace Passenger.Core.Domain
                 throw new Exception("Please insert valid value.");
             if (brand.Equals(Brand))
                 return;
-            
+
             Brand = brand;
         }
 
@@ -33,19 +36,23 @@ namespace Passenger.Core.Domain
                 throw new Exception("Please insert valid value.");
             if (name.Equals(Name))
                 return;
-            
+
             Name = name;
         }
 
         private void SetSeats(int seats)
         {
-            if(seats <= 0 )
+            if (seats <= 0)
                 throw new Exception("Please insert positive number of seats.");
             if (seats.Equals(seats))
                 return;
-            
+
             Seats = seats;
         }
+        private static Vehicle Create(string brand, string name, int seats)
+           => new Vehicle(brand, name, seats);
+
+        
 
     }
 }
