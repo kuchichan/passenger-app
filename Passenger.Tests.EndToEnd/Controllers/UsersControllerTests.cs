@@ -13,17 +13,9 @@ using Xunit;
 
 namespace Passenger.Tests.EndToEnd.Controllers
 {
-    public class UsersControllerTests
+    public class UsersControllerTests : ControllerTestsBase
     {
-        private readonly TestServer _server;
-        private readonly HttpClient _client;
-
-        public UsersControllerTests()
-        {
-            _server = new TestServer(new WebHostBuilder()
-                .UseStartup<Startup>());
-            _client = _server.CreateClient();
-        }
+    
         [Fact]
         public async Task given_valid_email_user_should_exist()
         {
@@ -69,13 +61,6 @@ namespace Passenger.Tests.EndToEnd.Controllers
             var responseString = await response.Content.ReadAsStringAsync();
 
             return JsonConvert.DeserializeObject<UserDTO>(responseString);
-        }
-
-        private static StringContent GetPayLoad(object data)
-        {
-            var json = JsonConvert.SerializeObject(data);
-            //content-type "application/json"
-            return new StringContent(json, Encoding.UTF8, "application/json");
         }
 
     }
