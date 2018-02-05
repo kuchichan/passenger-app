@@ -29,7 +29,7 @@ namespace Passenger.Tests.Services
         public async Task RegisterAsync_Should_Call_AddAsync_Minimum_Once()
         {
             
-            await _userServiceMock.RegisterAsync("user@email.com", "user", "secret");
+            await _userServiceMock.RegisterAsync("user@email.com", "user", "secret", "user");
 
             _userRepositoryMock.Verify(x => x.AddAsync(It.IsAny<User>()), Times.Once);
         }
@@ -41,7 +41,7 @@ namespace Passenger.Tests.Services
             _userRepositoryMock.Setup(x => x.GetAsync(testMail)).
             ReturnsAsync(It.Is<User>(x => x.Email == testMail));
 
-            await Task.FromResult(Assert.ThrowsAsync<Exception>(() =>  _userServiceMock.RegisterAsync(testMail ,"user","secret")));
+            await Task.FromResult(Assert.ThrowsAsync<Exception>(() =>  _userServiceMock.RegisterAsync(testMail ,"user","secret","user")));
             
         }
     }

@@ -7,12 +7,14 @@ using Passenger.Infrastructure.Commands;
 using Passenger.Infrastructure.Commands.Users;
 using Passenger.Infrastructure.DTO;
 using Passenger.Infrastructure.Services;
+using Passenger.Infrastructure.Settings;
 
 namespace Passenger.API.Controllers
 {
     [Route("[controller]")]
     public class UsersController : ApiControllerBase
     {
+    
         private readonly IUserService _userService;
 
         public UsersController(IUserService userService,

@@ -4,9 +4,9 @@ using Passenger.Infrastructure.DTO;
 
 namespace Passenger.Infrastructure.Services
 {
-    public interface IDriverService
+    public interface IDriverService : IService
     {
          Task<DriverDTO> GetAsync(Guid userId);
-         Task RegisterAsync(Guid userId);
+         Task RegisterAsync(Guid userId, string name, int seats, string brand);
     }
 }

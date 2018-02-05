@@ -14,12 +14,13 @@ namespace Passenger.Core.Domain
         public string Username { get; protected set; }
         public string FullName { get; protected set; }
         public DateTime CreatedAt { get; protected set; }
+        public string Role {get; protected set; }
 
         protected User()
         {
         }
 
-        public User(string email, string username, string password, string salt)
+        public User(string email, string username, string password, string salt, string role)
         {
             Id = Guid.NewGuid();
             try
@@ -36,6 +37,7 @@ namespace Passenger.Core.Domain
             Password = password;
             Salt = salt;
             CreatedAt = DateTime.UtcNow;
+            Role = role;
         }
     }
 }

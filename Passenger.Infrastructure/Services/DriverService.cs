@@ -25,9 +25,14 @@ namespace Passenger.Infrastructure.Services
             
         }
 
-        public async Task RegisterAsync(Guid userId)
+        public async Task RegisterAsync(Guid userId, string name, int seats, string brand)
         {
-            await Task.CompletedTask;            
+            var driver = await _driverRepository.GetAsync(userId);
+            if(driver != null)
+                throw new Exception($"Driver with user id: {userId} already exists.");
+            var vehicle = Vehicle.Create(name, brand, seats);
+            driver = new Driver(userId, vehicle);
+            await _driverRepository.AddAsync(driver);
         }
     }
 }
